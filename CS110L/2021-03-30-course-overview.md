@@ -24,8 +24,8 @@ Components:
 * Participation (20%)
 
 # Why Rust?
-* Languages like C/C++ commonly used for systems code
-* Issues like buffer overflow can create massive security holes leading to issues like remote code execution
+* Languages like C/C++ are commonly used for systems code
+* Issues like buffer overflow and use-after-free can create massive security holes leading to issues like remote code execution
 * Many overflows are obvious, but some are extremely subtle and hard to spot, as below:
 
 ## C buffer overflow example
@@ -43,12 +43,12 @@ Overflow occurs because `bytesToCopy` is signed and passing it as an argument to
 
 ## How to prevent making such mistakes?
 * Checking of data types and values at each runtime; a la Python/other interpreted languages. 
-    - Disadvantage: these languages are significantly slower than compiled language and can be prohibitive for running on large inputs
+    - Disadvantage: these languages are significantly slower than compiled language and can be prohibitive for running with large inputs
 * Dynamic analysis: Run program, watch what it does, look for problematic behavior
-    - Disadvantage: Can find problematic behavior only when inputs used to test display problems. Sometimes, humans need to craft inputs to exhibit these issues.
+    - Disadvantage: can find problematic behavior only when test inputs produce problematic behavior. Sometimes, humans need to craft inputs designed specifically to expose such behavior
     - Commonly combined with techniques such as fuzzing to test *lots* of inputs, but no guarantees that code is bug-free.
-* Static analysis: Read the source code and find problematic parts. 
+* Static analysis: Read the source code and find problematic parts 
     - Easy with simple cases (for example, if a program uses `gets()`, we know it can display problematic behavior)
-    - Impossible in the general case (i.e., Halting Problem)
+    - Disadvantage: impossible in the general case (i.e., Halting Problem)
 
-Rust tries to make static analysis more tractable and helpful. It analyzes programs and attempts to disallow buffer-overflow or use-after-free prone code.
+Rust tries to make static analysis more tractable and helpful. It analyzes programs and attempts to disallow buffer overflow or use-after-free-prone code.
