@@ -74,3 +74,65 @@ What makes the dispatcher run?
     - System calls
     - Errors
     - Page fault
+
+### Picking which thread to run
+Simple approach:
+* Take all ready threads and put them in a ready queue (linked list)
+* When thread becomes ready, put it in the back of a queue
+* Pick first off the thread to run
+
+In practice:
+* Most scheduling systems have some notion of priority
+* Queue structure organized according to priority
+* Dispatcher does not make priority decisions; it only physically stops and starts the threads
+* Scheduler is what makes decisions
+
+### Process creation
+* Create a PCB
+* Load process's code and data into memory
+* Create first thread
+    - Allocate stack memory
+    - Initialize thread state
+        - Make it look like thread had just been blocked before first instruction
+    - Add thread to ready queue
+
+### Kernel calls
+* Similar to calling a method in a local process
+* User program invokes method inside the OS
+
+#### Unix/Linux kernel calls
+
+```C
+// code is the same in parent and child
+// fork() returns different value for parent or child
+int pid = fork();
+if (pid == 0) { // denotes child process
+    // execute something on the child process via the shell
+    // typically, child will change something in inherited state before calling exec()
+    execv("/bin/ls", argv); 
+} else { // denotes parent process
+    // wait for child process to finish
+    // child PID is second value returned by fork()
+    waitpid(pid, &status, options);
+}
+```
+
+#### Windows kernel calls
+
+```C++
+BOOL CreateProcess(
+    LPCTSTR lpApplicationName,
+    LPTSTR lpCommandLine,
+    LPSECURITY_ATTRIBUTES lpProcessAttributes,
+    LPSECURITY_ATTRIBUTES lpThreadAttributes,
+    BOOL bInheritHandles,
+    DWORD dwCreationFlags,
+    PVOID lpEnvironment,
+    LPCTSTR lpCurrentDirectory,
+    LPSTARTUPINFO lpStartupInfo,
+    LPPROCESS_INFORMATION lpProcessInformation
+);
+
+WaitForSingleObject(lpProcessInformation->hProcess,
+    INFINITE);
+```
