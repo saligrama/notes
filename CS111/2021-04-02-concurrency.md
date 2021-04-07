@@ -89,3 +89,9 @@ Possible outputs:
 ABCCBA
 CBAABC
 ```
+
+## Safety and liveness
+* Safety: things that we don't want to happen in a system shouldn't happen
+* Liveness: system needs to do something
+
+Robust systems follow safety and liveness properties
