@@ -102,7 +102,7 @@ In practice:
 
 #### Unix/Linux kernel calls
 
-```C
+```C++
 // code is the same in parent and child
 // fork() returns different value for parent or child
 int pid = fork();

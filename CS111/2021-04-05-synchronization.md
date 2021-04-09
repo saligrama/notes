@@ -8,7 +8,7 @@
 
 ## Computerized milk purchase
 
-```C
+```C++
 if (milk == 0) {
     if (note == 0) {
         note = 1
@@ -23,7 +23,7 @@ This doesn't work, because thread 1 can see a zero value for `note` while thread
 Second attempt:
 
 Thread A
-```C
+```C++
 noteA = 1;
 if (noteB == 0) {
     if (milk == 0) {
@@ -33,7 +33,7 @@ if (noteB == 0) {
 noteA = 0;
 ```
 Thread B
-```C
+```C++
 noteB = 1;
 if (noteA == 1) {
     if (milk == 0) {
@@ -66,7 +66,7 @@ In this class: `std::mutex`
 
 ## Milk with locks
 
-```C
+```C++
 std::mutex m;
 
 m.lock();

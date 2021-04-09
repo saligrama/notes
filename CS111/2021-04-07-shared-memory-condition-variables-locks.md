@@ -7,7 +7,7 @@
 * Pointers stored in globals: shared
 * Pointers passed as arguments when instantiating threads: shared
 
-```C
+```C++
 void my_func(int x) {
     int y; // private
     Pool p; // private

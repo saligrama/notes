@@ -22,11 +22,11 @@ Properties:
 
 Example: suppose these are running on different threads
 
-```C
+```C++
 printf("ABC")
 ```
 
-```C
+```C++
 printf("CBA")
 ```
 
@@ -54,11 +54,11 @@ Not all ordering matters: doesn't matter if instructions access entirely indepen
 
 But order matters if, for example:
 
-```C
+```C++
 A = B + 1
 ```
 
-```C
+```C++
 B = B * 2
 ```
 
@@ -75,11 +75,11 @@ Properties:
 
 Example: suppose `printf()` was an atomic operation. With the following on separate threads:
 
-```C
+```C++
 printf("ABC")
 ```
 
-```C
+```C++
 printf("CBA")
 ```
 
