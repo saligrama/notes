@@ -19,7 +19,7 @@
 ### Enum (enumeration)
 * Type that can contain one of several variants
 
-```rs
+```rust
 enum TrafficLightColor {
     Red,
     Yellow,
@@ -31,7 +31,7 @@ let current_state : TrafficLightColor = TrafficLightColor::Green;
 
 Match expression: like a `switch` statement, but all possible variants must be covered.
 
-```rs
+```rust
 fn drive(light_state : TrafficLightColor) {
     match light_state {
         TrafficLightColor::Green => go();
@@ -48,7 +48,7 @@ fn drive(light_state : TrafficLightColor) {
 
 Rust `enum`s can store arbitrary data:
 
-```rs
+```rust
 enum Location {
     Coordinates(f32, f32),
     Address(String),
@@ -79,7 +79,7 @@ print_location(Location::Address("353 Jane Stanford Way".to_string()));
 
 Defined in Rust standard library as
 
-```rs
+```rust
 enum Result<T, E> {
     Ok(T),
     Err(E),
@@ -88,7 +88,7 @@ enum Result<T, E> {
 
 Usage:
 
-```rs
+```rust
 fn gen_num_sometimes() -> Result<u32, &'static str> {
     if get_random_num() > 10 {
         Ok(get_random_num());
@@ -118,7 +118,7 @@ However: error handling is still verbose!
 
 Compact error handling: shorthand expansion of `Result`
 
-```rs
+```rust
 fn helper() -> Result<T, E> {
     return do_something();
 }
@@ -130,7 +130,7 @@ fn main() {
 }
 ```
 
-```rs
+```rust
 fn read_file(filename : &str) -> Result<String, io::Error> {
     let mut s = String::new();
     File::open(filename)?.read_to_string(&mut s)?;
@@ -147,7 +147,7 @@ fn read_file(filename : &str) -> Result<String, io::Error> {
 
 `panic!` macro crashes program immediately with error message:
 
-```rs
+```rust
 if serious_issue() {
     panic!("Sad times!");
 }
@@ -157,7 +157,7 @@ if serious_issue() {
     - `Result::unwrap()` and `Result::expect()` let us take the `Ok` value, panicking if we got an `Err`.
     - `Result::expect()` will add a more descriptive message while panicking
 
-```rs
+```rust
 let mut input = String::new();
 io::stdin().read_to_string(&mut input).expect("Failed to read from stdin");
 ```
@@ -165,7 +165,7 @@ io::stdin().read_to_string(&mut input).expect("Failed to read from stdin");
 ### Option
 Like `Result`, for handling `None` (`NULL`).
 
-```rs
+```rust
 fn feeling_lucky() -> Option<String> {
     if get_random_num() > 10{
         Some(String::from("I'm feeling lucky!"))

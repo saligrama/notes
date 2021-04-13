@@ -19,7 +19,7 @@ These rules are enforced at compile time!
 
 ## Basic example
 
-```rs
+```rust
 fn main() {
     let a = Bear::get();
 }
@@ -27,7 +27,7 @@ fn main() {
 
 `a` is the owner of the string and can do anything with it (ex. use member functions), and is responsible for freeing the memory.
 
-```rs
+```rust
 fn main() {
     let a = Bear::get();
     let b = a;
@@ -37,7 +37,7 @@ fn main() {
 Now, `b` is the owner and has the same access privileges and responsibility; whereas `a` relinquishes all privileges and responsibilities.
 
 ## Borrowing
-```rs
+```rust
 fn main() {
     let a = Bear::get();
     my_cool_bear_function(&a);

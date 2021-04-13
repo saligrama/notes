@@ -4,7 +4,7 @@
     - Similar to C++ destructor
 * Classes that implement a `drop` function have a `Drop` trait
 
-```rs
+```rust
 fn main() {
     let a = "Hello, world!".to_string();
     let b = a;
@@ -23,14 +23,14 @@ fn main() {
 
 Example:
 
-```rs
+```rust
 let lst = vec![1,2,3];
 vec.push(4);
 ```
 
 is not allowed, but
 
-```rs
+```rust
 let mut lst = vec![1,2,3];
 vec.push(4);
 ```
@@ -45,18 +45,18 @@ is allowed.
 
 Code examples:
 
-```rs
+```rust
 let a = Bear::get();
 let b = &a;
 my_cool_bear_function(b);
 ```
 
-```rs
+```rust
 let mut a = Bear::get();
 let b = &mut a;
 ```
 
-```rs
+```rust
 fn append_to_vector(lst : &mut Vec<u32>) {
     lst.push(3);
 }
