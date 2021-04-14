@@ -190,11 +190,11 @@ fn main() {
     }
 
     // unwrap(), expect() work
-    let message = feeling_lucky.unwrap();
-    let message = feeling_lucky.expect("Function failed");
+    let message = feeling_lucky().unwrap();
+    let message = feeling_lucky().expect("Function failed");
 
     // add a default value if None was returned
-    let message = feeling_lucky.unwrap_or("Default value if None was returned");
+    let message = feeling_lucky().unwrap_or("Default value if None was returned");
 
     // ? operator also works with Option
     let expanded_message = feeling_lucky()? + " Are you?";
