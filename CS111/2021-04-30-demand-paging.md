@@ -86,3 +86,7 @@ This policy is mostly used in real-world systems.
 * Overcommitted memory
 * Each page fault replaces active pages
 * System only gets work done at the rate of the disk
+
+To fix, stop running some programs (move their memory to disk)
+
+With PCs, user will notice and either kill processes or buy more RAM
