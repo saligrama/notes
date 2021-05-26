@@ -70,9 +70,33 @@ Log: Detect/fix inconsistencies without full scan
 * After crash: replay log
     - At this point the system will be back to full integrity
 
-Disadvantage: log grows!
+Advantages:
+* Recovery fast
+* Eliminates inconsistencies
+* Log written sequentially, and is fast
+* Can delay metadata writes
+
+Disadvantages:
+* Log grows!
+* Synchronous disk writes can lose data
+
+Operation types:
+1. Before flushing cache, write log to disk
+2. For each cache block, last log position related to block
+
+When flushing disk block, make sure log is flushed
 
 ### Log truncation
 * Stop system, flush cache, truncate log
 * Save head position, flush cache, keep operating
 * Delete log entries older than saved head
+
+### Log contents
+* File metadata
+* High level operations (i.e., add block *x* to inode *y* at index *z*)
+* Physical operations (set bytes *x-y* of block *z* to *D*)
+* Must group records
+
+## fsync
+* Kernel call that forces all data for a file to disk
+* Can be invoked by program
