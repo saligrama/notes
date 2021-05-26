@@ -81,3 +81,55 @@ Another scheme:
 * Reconstruct map-map on startup
 * Writes: must write map as well as data
 * Reads: could take 2 reads
+
+### Garbage collection
+* Keep track of pages that are useful vs garbage
+* Pick erase units with many garbage pages
+* Read all live pages and write into fresh erase units
+* Erase old unit
+
+Write costs:
+* Suppose 90% utilized
+* 10 erase units
+* Read 9 erase units, write 9
+* 1 free erase unit
+* Requires 19 I/O's: *write amplification*
+
+Formula: cost = (1+U)/(1-U) where U is utilization (0.0-1.0)
+
+Ideal:
+* Hot (short-lived) and cold data
+* Want to segregate: most storage space is cold data, small amount hot
+* Run cold storage at high utilization, pay GC cost if there's free space in cold erase units
+* Hot storage at low utilization
+
+### Wear level
+* Erase at same rate everywhere
+* Use GC to move blocks between hot and cold pages
+* Occasionally: copy data from cold unit to hot one
+
+### Disadvantages of virtual disks
+* Duplication of FTL block map, FS inode
+* Missing info:
+    - FTL doesn't know about deletions
+    - GC copies live blocks!
+    - To fix, new command *trim*: indicate block will never be used again
+
+## Flash-optimized file systems
+* Lots of academic research projects, but none in widespread desktop use
+* F2FS - used in Android phones since mid 2010s
+* Need raw flash access, but no standard for that
+* One approach: log-structured file system (entire fs is a log)
+
+# Nonvolatile memory
+Example: Intel 3D XPoint (Optane)
+* Capacity: 512GB per DIMM
+* Read: 300ns
+* Write: 100ns
+* Comparable to DRAM (100ns read/write)
+* For FS, faster than flash
+* Can't harness raw performance due to software overhead
+    - Need new data model
+    - Current use: caching for larger HDDs to approximate flash speeds
+
+Open question: This is nearly as fast as DRAM. If this becomes as fast as DRAM, can we make *all* memory non-volatile? And what paradigm shifts could that cause?
