@@ -9,4 +9,4 @@ This repository contains notes for a number of computer science classes I took a
 * **Autumn 2021**
     - *INTLPOL 268* Hack Lab
     - *CS 154* Introduction to the Theory of Computer Science (handwritten notes coming)
-    - *CS 229* Machine Learning (handwritten notes coming)
+    - *CS 229* Machine Learning (handwritten)
