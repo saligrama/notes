@@ -8,5 +8,5 @@ This repository contains notes for a number of computer science classes I took a
     - *CS 224U* Natural Language Understanding
 * **Autumn 2021**
     - *INTLPOL 268* Hack Lab
-    - *CS 154* Introduction to the Theory of Computer Science (handwritten notes coming)
+    - *CS 154* Introduction to the Theory of Computer Science (handwritten)
     - *CS 229* Machine Learning (handwritten)
