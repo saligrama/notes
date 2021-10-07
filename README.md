@@ -1,7 +1,10 @@
 # Stanford CS Notes
 
-This repository contains notes for a number of computer science classes I took at Stanford University, starting Spring 2021.
+This repository contains notes for a number of computer science classes I took at Stanford University, starting Autumn 2020.
 
+* **Autumn 2020**
+    - *CS 103* Mathematical Foundations of Computing (handwritten)
+    - *CS 107* Computer Organization and Systems (handwritten)
 * **Spring 2021**
     - *CS 110L* Safety in Systems Programming
     - *CS 111* Operating Systems Principles
