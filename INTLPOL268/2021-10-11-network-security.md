@@ -1,4 +1,4 @@
-# Network Security, Part I
+# Network Security
 
 ## How does the internet work?
 
@@ -43,3 +43,18 @@ IPv6: Can have 2^128 addresses
 ### Application
 * Basic language: HTTP
 * Plus stuff on top of it: HTML/CSS/JS/etc
+
+## Glue Protocols
+Pull layers together!
+
+Between MAC address (link layer) and IP address (internet layer):
+* DHCP: Dynamic Host Configuration Protocol
+    - Automatically configures where each host should be on an internal network
+    - Configures gateway for hosts to get to outside internets
+* ARP: Address Resolution Protocol
+
+Between IP address (internet layer) and application layer (domain name):
+* DNS: Domain Name System
+    - Resolves domain names to IP addresses
+    - Sometimes: ISP DNS; however, has had issues where ISPs MitM to display ads
+    - Often: Google DNS (8.8.8.8) or Cloudflare (1.1.1.1)
