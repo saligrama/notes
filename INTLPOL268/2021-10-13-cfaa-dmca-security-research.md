@@ -1,6 +1,7 @@
 # Computer Fraud and Abuse Act (CFAA), continued
 
 *hiQ v. LinkedIn* (oral arguments Oct. 18, 2021 - remanded to 9th circuit)
+
 * hiQ argument:
     - Van Buren's gates up/down inquiry means scraping publicly avail data is OK (gate up) but scraping private data (like in Power Ventures) is not (gate down)
     - C&D letters and counter-bot measures don't count as "down gates" since info is public
@@ -9,6 +10,7 @@
     - IP blocks are technological or code-based rstrictions on access, per Van Buren footnote 8
 
 *Southwest Airlines v. Kiwi.com* (N.D. Tex. Sept. 30, 2021)
+
 * Kiwi scraped flight data from Southwest Airlines website, resold flights + additional fees
 * Southwest sent C&D letters to Kiwi and implemented tech. countermeasures
 * Claims in lawsuit: CFAA, TX "mini-CFAA," breach of contract, TM infringement, etc
@@ -21,6 +23,7 @@
 
 ## What laws can be used other than CFAA?
 Other laws have been invoked alongside CFAA in civil and criminal cases
+
 * Federal law
     - Copyright infringement (*Cvent*, *AP v. Meltwater* (S.D. N.Y. 2013), *Compulife v. Newman* (11th Cir. 2020))
         - *Meltwater* and *Newman* are web-scraping suits but not filed under CFAA
@@ -53,6 +56,7 @@ Claims may not necessarily succeed, and may be widely considered wrongly decided
 
 ### How will *Van Buren* affect security researchers?
 Commentators are mostly optimisitic
+
 * Tim Edgar (Brown University): *Van Buren* is good for two reasons
     - Narrows scope of CFAA; will promote companies working with rather than against security researchers
     - Companies will be forced to step their game up wrt security
@@ -68,9 +72,9 @@ Commentators are mostly optimisitic
 ## DMCA sections
 * 1201: Anti-circumvention provisions
     - Acts of circumvention (a)(1)
-        - `No person shall circumvent a technological measure that effectively controls access to a work protected [by federal copyright law]`
+        - "No person shall circumvent a technological measure that effectively controls access to a work protected [by federal copyright law]"
     - Trafficking in circumvention tools (a)(2), (b)(1)
-        - `No person shall manufacture, import, offer to the public, provide, or otherwise traffic in any technology, product, service, device, component, or part thereof` for circumvention of technological measure
+        - "No person shall manufacture, import, offer to the public, provide, or otherwise traffic in any technology, product, service, device, component, or part thereof" for circumvention of technological measure
     - What are technological protection measures?
         - e.g. DRM: region codes for DVDs, encryption for HD DVD and Blu-Ray, copy-protection on movies and games
         - Chip/software authentication handshakes

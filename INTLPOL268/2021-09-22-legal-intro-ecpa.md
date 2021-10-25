@@ -10,15 +10,18 @@
 Pathetic Dot theory: Market, Law, Norms, Architecture
 
 Industry standards, compliance bodies, self-regulatory schemes
+
 * ISO27001 - infosec management standards; can become legal req by law or contract
 * PCI DSS - anti CC fraud
 * Digital Advertising Alliance - ad industry self-reg body
 
 Tech companies enforcing standards + policing behavior
+
 * Apple, google app stores - rules and review processes; keep out malware/spyware
 * Cloudflare - stopped providing DDoS protection for hate speech
 
 Insurance
+
 * Cyber risk insurance - induce improvements in cybersec
 * Forces are entwined with the law but not separate
     - Legal regulations for insurance, app store antitrust issues

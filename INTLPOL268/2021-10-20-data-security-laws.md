@@ -16,10 +16,12 @@ Nothing comprehensive at the federal level; states have all the power here.
     - Many states add more types of info to definitions of PI
 
 Ex: in California
+
 * Need to notify attorney general (AG)'s office if organization has data breach
 * AG's office curates list of data breaches on website; searchable by name and date; includes both private entities and CA public entities
 
 Some states require notification ASAP
+
 * Criticism is that this forces notification before it is clear what exactly happened; vague initial notices can sow fear/uncertainty/doubt among public
 
 ## State Data Security Laws
@@ -94,21 +96,25 @@ Some states require notification ASAP
 * Enforcement/Redress
 
 FTC section 5 authority: "Unfair or deceptive acts or practices in or affecting commerce...are...declared unlawful"
+
 * Ability to levy fines
 * Ability to define adequate practices
 
 FTC v. Wyndham Hotels (3rd Cir. 2015)
+
 * FTC has Section 5 authority to regulate data security practices
 * Wyndham had fair notice of potential "unfair" prong liability under FTC Act, due to FTC's previous adjudication and interpretive guidance
 * Settled: 20-year consent decree, security focused practices, audits
 
 FTC v. LabMD (11th Cir. 2018)
+
 * LabMD argued that without formal agency rulemaking, LabMD was not on notice of what's unreasonable
 * Assumed without deciding that poor data security is an unfair practice
 * Court sided with LabMD
 * Pos LabMD, consent orders won't be as useful to police future bad behavior; now FTC data security orders have gotten more specific
 
 FTC sues everyone!
+
 * Dozens of 5 enforcement actions re: inadequate consumer PI protection since 2002
 * FTC consent orders require creation of comprehensive info security programs -> FTC developed a set of de facto security standards and practices
 * Failure to comply = fines for violated the order
@@ -118,6 +124,7 @@ FTC sues everyone!
     - "and is not outweighted by countervailing benefits to consumers or to competition"
 
 Examples:
+
 * CVS Caremark (2009)
 * Facebook (2011)
     - Facebook (2019) Cambridge Analytica - violation of 2011 decree - $5 billion fine
@@ -131,11 +138,13 @@ Examples:
 
 # Class Action Litigation
 Lawsuits by people whose data was breached
+
 * Example: Yahoo
     - Class action lawsuit over 3 separate breaches affecting a total of 3 billion accounts
     - Settlement of $117.5 million in April 2019
     - Around 194 million people in the US and Israel may be eligible to make claims
 
 Securities class action (by shareholders): still very effective
+
 * Yahoo: $80m, another $29m settlement
 * Equifax: $149 million
