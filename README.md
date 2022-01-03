@@ -13,3 +13,5 @@ This repository contains notes for a number of computer science classes I took a
     - *INTLPOL 268* Hack Lab
     - *CS 154* Introduction to the Theory of Computer Science (handwritten)
     - *CS 229* Machine Learning (handwritten)
+* **Winter 2022**
+    - *CS 161* Design and Analysis of Algorithms
