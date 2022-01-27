@@ -14,5 +14,5 @@ This repository contains notes for a number of computer science classes I took a
     - *CS 154* Introduction to the Theory of Computer Science (handwritten)
     - *CS 229* Machine Learning (handwritten)
 * **Winter 2022**
-    - *CS 161* Design and Analysis of Algorithms
-    - *CS 255* Introduction to Cryptography
+    - *CS 161* Design and Analysis of Algorithms (partially handwritten)
+    - *CS 255* Introduction to Cryptography (handwritten)
