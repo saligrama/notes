@@ -18,3 +18,4 @@ This repository contains notes for a number of computer science classes I took a
     - *CS 255* Introduction to Cryptography (handwritten)
 * **Spring 2022**
     - *CS 155* Computer and Network Security
+    - *CS 143* Compilers
