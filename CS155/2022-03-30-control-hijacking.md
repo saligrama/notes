@@ -275,12 +275,6 @@ Example: IE11 CVE-2014-0282
 
 The exploit:
 
-### Use-after-free exploits
-
-Constituted 36% of security vulnerabilities in Chrome 2015-2020
-
-Example: IE11 CVE-2014-0282
-
 ```html
 <form id="form">
     <textarea id="c1" name="a1" ></textarea>
