@@ -25,7 +25,7 @@
 * Privilege separation: dividing a system into parts to which we can limit access
     - Segmenting a system into components with least privilege needed can prevent an attacker from taking over the entire system
 
-### Privilege separation
+## Privilege separation
 
 ### Security subjects and security policies
 
