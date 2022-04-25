@@ -153,3 +153,11 @@ e.g. search on `https://google.com/search?q=apple`
 
 * Previously: tried to filter out tags that could be possibly part of an attack
     - However: this is very hard: huge amount of different ways to run JS content
+* Content Security Policy (CSP):
+    - HTTP header that servers can send which declares which dynamic resources (e.g. JS) are allowed
+    - e.g. JS: `Content-Security-Policy: script-src 'self'`
+        - JS can only be loaded from the same domain as the page
+        - No JS will be executed from other domains
+        - No inline scripts will be executed
+    - Can be very particular about where any type of resources (e.g scripts, fonts, CSS, images) can be loaded from
+        - Mozilla default policy: only allow images, scripts, AJAX, form actions, CSS from same origin, and does not allow any other resources to load (and no inline scripts)
