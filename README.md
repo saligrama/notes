@@ -20,4 +20,5 @@ This repository contains notes for a number of computer science classes I took a
     - *CS 143* Compilers
     - *CS 155* Computer and Network Security
 * **Autumn 2022**
+    - *CS 149* Parallel Computing
     - *CS 251* Blockchain and Cryptocurrency Technologies
