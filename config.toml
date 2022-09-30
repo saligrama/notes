@@ -1,0 +1,17 @@
+baseURL = 'https://saligrama.io/notes/'
+languageCode = 'en-us'
+title = "Aditya's notes"
+theme = 'hugo-book'
+pluralizelisttitles = false
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 1
+  [markup.highlight]
+    style = 'dracula'
+
+[params]
+    BookTheme = 'auto'
+    BookSection = '*'

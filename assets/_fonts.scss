@@ -1,0 +1,15 @@
+/* Lato regular and bold */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Iosevka Saligrama Extended';
+  src: url('https://cdn.jsdelivr.net/gh/saligrama/blog@master/assets/fonts/TTF/iosevka-custom-extended.ttf');
+}
+
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+code {
+  font-family: 'Iosevka Saligrama Extended', monospace;
+}
