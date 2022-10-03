@@ -1,5 +1,7 @@
 # Stanford CS Notes
 
+**NEW (10/02/2022)**: view these notes at [https://saligrama.io/notes](https://saligrama.io/notes)
+
 This repository contains notes for a number of computer science classes I took at Stanford University, starting Autumn 2020.
 
 * **Autumn 2020**
