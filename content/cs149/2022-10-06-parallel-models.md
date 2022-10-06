@@ -139,6 +139,9 @@ void foo(
 * ISPC task abstraction: managed assignment of tasks to threads
     - After completing current task, worker thread inspects list and assigns itself next remaining task
     - Thread pool abstraction: no need to keep respawning threads
+        - **Note: ISPC tasks are an abstraction for *work*, not threads!!**
+        - ISPC tasks are units of work that are put on a queue, that are then pulled off the queue by worker threads
+        - The number of worker threads is the number of execution units on the hardware
 
 ### Thread orchestration
 
