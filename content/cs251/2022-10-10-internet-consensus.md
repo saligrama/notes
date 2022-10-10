@@ -1,3 +1,7 @@
+---
+math: true
+---
+
 # Consensus on the internet
 
 Characterized by open participation:
