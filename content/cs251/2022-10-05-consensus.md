@@ -94,3 +94,13 @@ math: true
     - Finalization rule: client finalizes block and prefix once observed notarization of block
 * Proving security under same constraints:
     * Safety: now works under constraints, because cannot get over $2n/3$ votes for duplicate notarization with only adversarial votes
+
+### Streamlet
+
+* At each epoch:
+    - Propose: leader $L_e$ identifies longest notarized chain that it has seen so far and proposes new block extending that chain; tiebreak adversarial
+    - Vote: same as teen streamlet
+    - Finalization rule: upon seeing three adj. blocks in notarized chain with consecutive epoch numbers, client finalizes second of three blocks and entire prefix change
+* Secure: yes
+* However, inefficient: requires $\Theta(n^3)$ messages per block 
+    - Protocols like HotStuff are as secure and achieve $\Theta(n)$ message complexity per block
