@@ -115,3 +115,8 @@ void qsort(int *begin, int *end) {
         ```
     - When Cilk reaches a spawn, thread places continuation (i.e., rest of what is not being `cilk_spawn`ed) in its own queue
         - Available to other idle threads to do the work: "child stealing" vs. "continuation stealing"
+        - Work queue implemented as deque (double-ended queue)
+            - Normal operation: local thread pushes/pops from tail
+            - When work stealing: remote threads pop from head
+        - Stealing policy: idle threads randomly choose thread to attempt to steal from (random victim)
+            - Child-first work stealing scheduler anticipates divide-and-conquer parallelism
