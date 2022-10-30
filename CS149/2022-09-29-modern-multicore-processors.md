@@ -1,3 +1,4 @@
+
 # A Modern Multi-core Processor
 
 ## Part 1: Speeding up an example sine program
@@ -266,3 +267,23 @@ st r0 mem[r2]
 * Idea: potentially increase time to complete a single thread's work in order to increase overall system throuput when running multiple threads
 * However: this requires storing execution contexts
     - Tradeoff between memory caching and storing these execution contexts
+* Takeaway: a processor with multiple HW threads has the ability to avoid stalls by interleaving executions
+    - This doesn't affect mem. access latency; it just improves processor utilization
+
+### Hardware-supported multithreading
+
+* Core manages execution contexts for multiple threads
+* Interleaved multi-threading
+* Simultaneous multi-threading (SMT)
+    - e.g. Intel Hyper-Threading
+
+Broader takeaway: can combine each of these parallelism constructs!
+- This is what modern chips (e.g., Intel Skylake/Kaby Lake, Nvidia GPUs) do
+
+### Latency and Bandwidth
+
+* Memory bandwidth: rate at which memory system can provide data to a processor (e.g., 20 GB/s)
+    - Execution speed is often limited by available bandwidth
+    - e.g. data transfer speed = 8 bytes per clock: then simple math adds (1 add per clock) can create up to 3 outstanding load requests
+    - This is called bandwidth-bound execution: instruction throughput limited by bandwidth, not latency or outstanding requests etc.
+    - Influences chip design: modern GPUs place memory on or near chip

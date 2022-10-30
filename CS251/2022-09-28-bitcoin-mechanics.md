@@ -78,7 +78,7 @@
 
 ### Transaction types
 
-1. P2PKH
+1. P2PKH: pay to public key hash
     - e.g. Alice wants to pay Bob 5 BTC
         1. Bob generates sig key pair `(pk_b, sk_b) <- Gen()`
         2. Bob computes bitcoin addr `addr_b <- H(pk_b)`
@@ -89,3 +89,28 @@
                 - `ScriptPK_b`: `DUP HASH256 <addr_b> EQVERIFY CHECKSIG`
             - `utxo_A` for Alice: 2 BTC, `ScriptP_a`
             - locktime: 0
+2. P2SH: pay to script hash
+    - Payer specifies a redeem script (instead of just pkhash)
+        1. Bob publishes `hash(redeem_script) <- bitcoin_addr`
+        2. Alice sends funds to that address in funding Tx
+        3. Bob can spend UTXO if he satisfy the script
+    - `ScriptPK` in UTXO: `HASH160 H(redeem_script) EQUAL`
+    - Payer can specify complex conditions for when UTXO can be spent
+    - e.g. Multisig:
+        - Goal: spending UTXO requires `t` out of `n` signatures (i.e. 2/3)
+        - Redeem script for 2 of 3 (chosen by payer):
+            - `<2> <PK1> <PK2> <PK3> <3> CHECKMULTISIG`
+            - hash gives P2SH address
+        - ScriptSig to spend (by Payee):
+            - `<0> <sig1> <sig3> <redeem_script>`
+
+### Segregated Witness
+
+**ECDSA malleability**:
+
+* Given `(m, sig)` anyone can create `(m, sig')` with `sig != sig'`
+    - miner can change `sig` in Tx and change `TxID = SHA256(Tx)`
+    - Tx issuer cannot tell what `TxID` is until Tx is posted
+    - leads to problems and attacks
+* With segregated witnesses, signature is moved to witness field in Tx
+    - `TxID = Hash(Tx without witnesses)`
