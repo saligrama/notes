@@ -1,6 +1,8 @@
 # Stanford CS Notes
 
-**NEW (10/02/2022)**: view these notes at [https://saligrama.io/notes](https://saligrama.io/notes)
+View these notes at [https://saligrama.io/notes](https://saligrama.io/notes).
+
+**NOTE (2022-10-30)**: the above website is the preferred way of viewing these notes, due to better search, math, formatting, and syntax highlighting support, and notes will only be updated live there (on the [hugo-dev](https://github.com/saligrama/notes/tree/hugo-dev) branch). Notes will be synced back here monthly. 
 
 This repository contains notes for a number of computer science classes I took at Stanford University, starting Autumn 2020.
 
