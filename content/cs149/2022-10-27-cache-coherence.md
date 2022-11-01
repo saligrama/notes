@@ -75,4 +75,49 @@ For any memory address, and at any given time period (epoch):
 * Dirty state of cache line indicates exclusive ownership (RW epoch)
     - Modified: cache is only cache with valid copy of line (can safely be written to)
     - Owner: cache responsible for propagating info to other processors when they attempt to load it from memory (otherwise a load will result in stale data)
-    
+
+### MSI write-back invalidation protocol
+
+* Key tasks: ensure processor obtains exclusive write access, locating most recent copy of cache line's data on cache miss
+* Three cache line states:
+    - Invalid (I): same meaning of invalid in uniprocessor cache
+    - Shared (S): line valid in one or more caches, memory up to date
+    - Modified (M): line valid in exactly one cache (dirty, exclusive)
+* Two processor operations (triggered by local CPU)
+    - `PrRd` (read)
+    - `PrWr` (write)
+* Three coherence-related bus transactions from remote caches
+    - `BusRd`: obtain copy of line with no intent to modify
+    - `BusRdX`: obtain copy of line with intent to modify
+    - `BusWb`: write dirty line out to memory
+* Invalidation protocol:
+    - Read obtains block in "shared", even if only cached copy
+    - Obtain exclusive ownership before writing
+        - `BusRdX` causes others to invalidate
+        - If `M` in other cache, will cause writeback
+        - `BusRdX` even if hit in `S`: promote to `M`
+* Satisfaction of cache coherence:
+    - SWMR invariant: satisfied as only one cache can be in `M`-state, all others get invalidation message
+    - Multiple caches can be in read-only `S`-state
+
+### MESI invalidation protocol
+
+* MSI inefficiency: requests two interconnect transactions for common case of reading address, then writing to it
+* Solution: add additional state `E` ("exclusive clean")
+    - Line has not been modified, but only this cache has a copy of the line
+    - Decouples exclusivity from line ownership (line not dirty, so copy in memory is valid copy of data)
+    - Upgrade from `E` to `M` does not require bus transaction
+
+### Scalable cache coherence using directories
+
+* Snooping schemes broadcast coherence messages to determine state of line in other caches: not scalable
+* Alternative idea: avoid broadcast by storing info. about status of the line in one place: a "directory"
+    - Directory entry for cache line contains info about state of cache line in all caches
+    - Caches look up info from directory as necessary
+    - Cache coherence maintained by point-to-point messages between caches on "need-to-know" basis
+* Still need to maintain SWMR and write serialization invariants
+
+### Implications of cache coherence on programmer
+
+* Communication is everything - comm. time is key parallel overhead!
+* Cache synchronization appears as increased memory access time for multiprocessor
