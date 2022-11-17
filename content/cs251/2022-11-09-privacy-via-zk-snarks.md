@@ -1,3 +1,7 @@
+---
+math: true
+---
+
 # Using zk-SNARKs for Privacy on the Blockchain
 
 ## What is a zk-SNARK?
