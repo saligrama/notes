@@ -25,11 +25,11 @@ What is needed:
 
 ### Linux process memory layout (x86-64)
 
-![Linux process memory layout](img/2022-03-30-linux-process-memory-layout.png)
+![Linux process memory layout](/notes/images/cs155/2022-03-30-linux-process-memory-layout.png)
 
 ### Linux stack frame (x86-64)
 
-![Linux stack frame](img/2022-03-30-linux-stack-frame.png)
+![Linux stack frame](/notes/images/cs155/2022-03-30-linux-stack-frame.png)
 
 ### Review of buffer overflows
 
@@ -45,17 +45,17 @@ void func(char *str) {
 
 After `strcpy`, stack looks like:
 
-![Buffer ok](img/2022-03-30-strcpy-ok.png)
+![Buffer ok](/notes/images/cs155/2022-03-30-strcpy-ok.png)
 
 If `*str` is 144 bytes long, after `strcpy`, stack looks like:
 
-![Buffer bad](img/2022-03-30-strcpy-bad.png)
+![Buffer bad](/notes/images/cs155/2022-03-30-strcpy-bad.png)
 
 ### Basic stack exploit
 
 Suppose `*str` is such that after `strcpy` looks like
 
-![Stack exploit](img/2022-03-30-basic-stack-exploit.png)
+![Stack exploit](/notes/images/cs155/2022-03-30-basic-stack-exploit.png)
 
 where Program P is `exec("/bin/sh")`. This allows an attacker to run a shell on the webserver.
 
@@ -76,7 +76,7 @@ xor eax, eax
 inc ax
 ```
 
-![NOP slide](img/2022-03-30-nop-slide.png)
+![NOP slide](/notes/images/cs155/2022-03-30-nop-slide.png)
 
 #### Details and examples
 
@@ -124,7 +124,7 @@ strcpy_s(*dest, DestSize, *src);
 
 C++ stores data elements of an object, first address in object points to virtual table, which contains pointers to the functions that use those objects
 
-![vtable overflow](img/2022-03-30-vtable-attack.png)
+![vtable overflow](/notes/images/cs155/2022-03-30-vtable-attack.png)
 
 #### Example: exploiting browser heap
 
@@ -147,7 +147,7 @@ Solution: Heap Spraying
 1. Use Javascript to spray heap with shellcode and NOP slides
 2. Then point vtable ptr anywhere in spray area
 
-![Heap spraying](img/2022-03-30-heap-spray.png)
+![Heap spraying](/notes/images/cs155/2022-03-30-heap-spray.png)
 
 How this works in code:
 

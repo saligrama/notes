@@ -65,7 +65,7 @@
 
 Interaction of layers:
 
-![Layer interactions](img/2022-05-09-osi-interaction.png)
+![Layer interactions](/notes/images/cs155/2022-05-09-osi-interaction.png)
 
 ### Packet encapsulation
 

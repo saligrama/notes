@@ -48,7 +48,7 @@ Tpyical server: 2 chips, 12 cores, 2-way hyperthreading: 48 simultaneous threads
 * Accounting
 
 ## Thread states
-![Thread states](./img/2021-03-31-thread-states.png)
+![Thread states](/notes/images/cs111/2021-03-31-thread-states.png)
 
 Why no arrow from ready to blocked? Because the thread needs to run in order to wait on a resource, which is what blocked denotes.
 

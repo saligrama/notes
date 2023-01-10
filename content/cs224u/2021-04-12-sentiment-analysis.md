@@ -66,4 +66,4 @@ Most of these criteria are met by `nltk.tokenize.casual.TweetTokenizer` (for Twe
 * Thwarted expectations: ratio of positive to negative words
 
 ## RNN classifiers
-![RNN](./img/2021-04-12-rnn.png)
+![RNN](/notes/images/cs224u/2021-04-12-rnn.png)

@@ -50,14 +50,14 @@
     - `EINIT`: verifies that hashed content is properly signed; if so, initializes enclave (signature: RSA3072)
     - `EENTER`: call function inside enclave
     - `EEXIT`: return from enclave
-![SGX enclave](img/2022-05-04-sgx-enclave.png)
+![SGX enclave](/notes/images/cs155/2022-05-04-sgx-enclave.png)
 
 ### SGX attestation
 
 * Problem: enclave memory is in the clear prior to activation (`EINIT`)
 * How to get secrets into enclave?
 
-![SGX attestaton](img/2022-05-04-sgx-attestation.png)
+![SGX attestaton](/notes/images/cs155/2022-05-04-sgx-attestation.png)
 
 ### SGX insecurity
 
@@ -83,7 +83,7 @@
         - Work during delays: speculative execution
 * Memory caches
     - Hold local (fast) copy of recently-addressed 64-byte chunks of memory
-    ![Memory cache](img/2022-05-04-mem-cache.png)
+    ![Memory cache](/notes/images/cs155/2022-05-04-mem-cache.png)
 * Speculative execution
     - At a branch: CPU will guess that the code will go in one direction and start executing that code while waiting for branch result
     - When result comes back, if it is wrong direction, throw away the work and start executing that direction

@@ -40,7 +40,7 @@ Idea: transform complete breach to denial of service
         execve("/bin/sh", 0, 0);
         ```
     - Look for *gadgets* in victim code (either in application, `libc.so`, or elsewhere) that match each of the above lines of code
-        ![ROP implementation: gadgets](img/2022-04-04-rop-impl.png)
+        ![ROP implementation: gadgets](/notes/images/cs155/2022-04-04-rop-impl.png)
     - Attacker just needs to look for segments containing gadgets in machine code (i.e. `pop rdi; ret` corresponds to `0x5fc3`)
         - Segments do not need to be instructions, they could just be a string or other data (as long as they are not located on the stack or heap)
 
@@ -84,7 +84,7 @@ Idea: transform complete breach to denial of service
         - Not used because this doesn't defend against stack-smashing using `memcpy`
 * Enhancement: ProPolice
     - Since GCC 3.4.1 (`-fstack-protector`): rearrange stack layout to prevent ptr overflow
-    ![ProPolice](img/2022-04-04-propolice.png)
+    ![ProPolice](/notes/images/cs155/2022-04-04-propolice.png)
 * MS Visual Studio `/GS` (`BufferSecurityCheck`)
     - Combination of ProPolice and random canary
     - If cookie mismatch, default behavior is to call `exit(3)`

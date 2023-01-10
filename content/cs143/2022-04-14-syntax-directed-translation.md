@@ -71,7 +71,7 @@ For the following: consider the example
 
 Example parse tree:
 
-![Parse tree example](img/2022-04-14-parse-tree-example.png)
+![Parse tree example](/notes/images/cs143/2022-04-14-parse-tree-example.png)
 
 * This does trace parser operation and capture nesting structure, but has a lot of additional details
     - Parenthesis
@@ -79,7 +79,7 @@ Example parse tree:
 
 Example AST:
 
-![AST example](img/2022-04-14-ast-example.png)
+![AST example](/notes/images/cs143/2022-04-14-ast-example.png)
 
 * Captures what we want to, but much less unnecessary detail
 
@@ -114,13 +114,13 @@ Example AST:
             | (E1)      { E.val = E1.val }
         ```
     - For example string: processes into
-        ![Semantic actions example](img/2022-04-14-semantic-actions-example.png)
+        ![Semantic actions example](/notes/images/cs143/2022-04-14-semantic-actions-example.png)
 
 ## Dependency graphs
 
 Example: 
 
-![Dependency graph example](img/2022-04-14-dependency-graph-example.png)
+![Dependency graph example](/notes/images/cs143/2022-04-14-dependency-graph-example.png)
 
 * Attributes must be computed after all successors have been computed
 * Orders exist only when there are no cycles

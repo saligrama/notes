@@ -4,11 +4,11 @@
 
 ### External BGP: between Autonomous Systems
 
-![eBGP topology](./img/2023-01-09-ebgp.jpg)
+![eBGP topology](/notes/images/cs249i/2023-01-09-ebgp.jpg)
 
 ### Internal BGP (iBGP): within an AS
 
-![iBGP and eBGP topology](./img/2023-01-09-ibgp.jpg)
+![iBGP and eBGP topology](/notes/images/cs249i/2023-01-09-ibgp.jpg)
 
 * Set of private ASNs (192.168.0.0/16)
 * eBGP: any route received over eBGP: propagate to both iBGP and eBGP peers
@@ -25,7 +25,7 @@
 
 ### IP Transit and BGP Peering
 
-![IP Transit and BGP Peering topology](./img/2023-01-09-ip-transit-bgp-peering.jpg)
+![IP Transit and BGP Peering topology](/notes/images/cs249i/2023-01-09-ip-transit-bgp-peering.jpg)
 
 * IP transit: entity pays an AS to gain access to the broader internet
     - Exchange: $$ for bits and BGP announcment
@@ -34,7 +34,7 @@
     - This provides full connectivity
     - But: anyone in this deal needs to be a *big* player to participate
 
-![IP transit with Tier-1 and Tier-2 providers](./img/2023-01-09-t2-transit.jpg)
+![IP transit with Tier-1 and Tier-2 providers](/notes/images/cs249i/2023-01-09-t2-transit.jpg)
 
 * Suppose we're sending a packet from MIT to UChicago
     - Packet won't make it: NTT intermediary will only provide access to its own customers, not to others' customers

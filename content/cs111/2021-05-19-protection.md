@@ -31,7 +31,7 @@ Which principals, which operations, which objects
 
 Access matrix:
 
-![Access matrix](./img/2021-05-21-access-matrix.png)
+![Access matrix](/notes/images/cs111/2021-05-21-access-matrix.png)
 
 ### Access control list
 * Protection info stored with objects

@@ -3,7 +3,7 @@
 ## Meaning representations
 Co-occurrence matrix:
 
-![Co-occurrence matrix](./img/2021-03-31-co-occurrence-matrix.png)
+![Co-occurrence matrix](/notes/images/cs224u/2021-03-31-co-occurrence-matrix.png)
 
 Meaning can be present in such a matrix.
 * If a word co-occurs often with "excellent," it likely is a positive word; if it co-occurs often with "terrible," it likely denotes something negative
@@ -63,7 +63,7 @@ Note: Models like GloVe and word2vec provide packaged solutions that pre-chose f
 ## Vector comparison (similarity)
 Within the context of this example:
 
-![Example](./img/2021-03-31-comparison-example.png)
+![Example](/notes/images/cs224u/2021-03-31-comparison-example.png)
 
 Note that B and C are close in distance (frequency info), but A and B have a similar bias (syntactic/semantic info)
 
@@ -77,7 +77,7 @@ This measures the straight-line distance between `u` and `v` capturing the pure 
 
 Note: Length normalization
 
-![Length norm](./img/2021-03-31-length-norm.png)
+![Length norm](/notes/images/cs224u/2021-03-31-length-norm.png)
 
 This captures the bias aspect of similarity
 
@@ -110,7 +110,7 @@ Goal: Amplify important data useful for generalization, because raw counts/frequ
 
 ### Observed/Expected
 
-![Observed/Expected](./img/2021-03-31-observed-expected.png)
+![Observed/Expected](/notes/images/cs224u/2021-03-31-observed-expected.png)
 
 **Intuition**: Keeps words in idioms co-occurring more than expected; other word pairs co-occur less than expected
 
@@ -130,7 +130,7 @@ PMI undefined when `X_{ij} = 0`. So:
 
 For a corpus of documents D:
 
-![TF-IDF](./img/2021-03-31-tf-idf.png)
+![TF-IDF](/notes/images/cs224u/2021-03-31-tf-idf.png)
 
 ## Dimensionality reduction
 
@@ -157,9 +157,9 @@ Dimensionality reduction comes from being selective about which singular values 
 
 Basic autoencoder model:
 
-![Autoencoder](./img/2021-03-31-autoencoder.png)
+![Autoencoder](/notes/images/cs224u/2021-03-31-autoencoder.png)
 
 ### GloVe
 * Goal is to learn vectors for words such that their dot product is proportional to their log probability of co-occurrence
 
-![GloVe Objective](./img/2021-03-31-glove-objective.png)
+![GloVe Objective](/notes/images/cs224u/2021-03-31-glove-objective.png)
