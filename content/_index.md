@@ -23,4 +23,5 @@ This site hosts notes for a number of computer science classes I took at Stanfor
     - *CS 149* Parallel Computing
     - *CS 251* Blockchain and Cryptocurrency Technologies
 * **Winter 2023**
+    - *CS 153* Applied Security at Scale
     - *CS 249I* The Modern Internet (handwritten diagrams)
