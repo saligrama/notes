@@ -114,3 +114,37 @@ Queries happen over UDP, with the following fields:
 * DNS-over-TLS/DNS-over-HTTPS solves this, by directly routing queries to DNS providers like Google and Cloudflare
     - This made ISPs livid, because they were selling data about DNS queries they could collect in the clear
     - However, ISPs can now try to pretend to be 8.8.8.8 - used for censorship
+
+## DNS administration
+
+* Before 1999: US Department of Commerce, SRI-NIC, Network Solutions
+* After 1999: Commerce delegated to ICANN:
+    * *gTLD* (generic TLD) have to obey rules set forth by ICANN
+    * *ccTLD* (country code TLD) rules are determined by each country
+* Principles:
+    - Competition
+    - Representation
+    - Stability
+    - Private, bottom-up coordination
+* Stakeholders:
+    - ICANN
+    - Registrar (e.g. GoDaddy): handles registration of domains (i.e., selling domains)
+    - Registry (e.g. Verisign): handles operations
+    - Registrant (e.g. Google): domain owner
+
+### Updating nameservers
+
+1. Registrant uses Registrar's web API to change nameservers
+2. Registrar updates EPP (Extensible Provisioning Protocol) server held by Registry, which updates its database
+3. Registry updates TLD authoritative NS
+
+## Attacks on DNS infrastructure
+
+* Domain hijacking: compromise of domain registrars to redirect a victim company's domain name to a malicious IP
+    - Used for conducting phishing attacks
+* TLS doesn't help here!
+    - TLS protects against MITM attacks
+    - Automated TLS certificate issuance using domain validation (e.g. Let's Encrypt) uses DNS to authenticate domain "ownership"
+    - However, if attacker controls DNS on registrar end, can obtain TLS certificate for the fraudulent domain
+    - 2017 attack against aerospace companies was pre-Cert Transparency, so no record of the new fraudulent certificate being issued
+    - But: if you're someone big like Google, then you ship your cert to browsers and have the browsers SSL pin you, so this attack is hard to pull off against such targets
