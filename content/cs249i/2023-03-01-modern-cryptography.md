@@ -19,7 +19,7 @@
     - Most browsers just used broken crypto everywhere
 * Key length restrictions:
     - Public-key crypto: max 512-bit public keys
-    - Symmetric crypto: max 40-bit public keys
+    - Symmetric crypto: max 40-bit keys
     - Signatures and MACs unregulated
 * Early 1990s: two versions of Netscape browser:
     - US version w/ full-strength crypto e.g. 1024-bit RSA, 128-bit RC4
