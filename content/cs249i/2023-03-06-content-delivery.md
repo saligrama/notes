@@ -49,7 +49,7 @@ Why study content delivery?
     - Advantages: easy to deploy, less distance to cover causes less latency, effective in low-connectivity reasons
     - Disadvantages: tough to maintain/update
 * *Consolidated* strategy: prioritize fewer, but more powerful PoPs (usually collocated at data centers and IXPs)
-    - Advantages: serve/cache moe content; better connected to next hop; provides DDoS mitigation; easier to maintain/update
+    - Advantages: serve/cache more content; better connected to next hop; provides DDoS mitigation; easier to maintain/update
     - Disadvantages: tough to deploy new PoP; less effective in low-connectivity regions
 * In the real world: use both! (Amazon Cloudfront, Akamai, Netflix Open Connect)
     - Netflix doesn't run its own network; rather places content on ISPs networks in exchange for a promise that it will pre-position content outside peak hours to save bandwidth
@@ -73,7 +73,7 @@ Why study content delivery?
     - Advantages: clients choose edge location so CDNs don't need to guess; BGP makes this naturally reactive to failures
     - Disadvantages:
         - Manipulating traffic slow due to reliance on BGP propagation
-        - BGP route flags: TCP `SYN` and `ACK` can theoretically get directed to different servers
+        - BGP route flaps: TCP `SYN` and `ACK` can theoretically get directed to different servers
             - Route flap damping (which penalizes constant route changing) takes care of this
         - Have to predict which PoPs will likely receive the most traffic in advantage, since can't easily change the hardware/infrastructure
             - Can create overload/underload if predictions are wrong
