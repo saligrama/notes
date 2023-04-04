@@ -25,3 +25,6 @@ This site hosts notes for a number of computer science classes I took at Stanfor
 * **Winter 2023**
     - *CS 153* Applied Security at Scale
     - *CS 249I* The Modern Internet (handwritten diagrams)
+* **Spring 2023**
+    - *CS 144* Introduction to Computer Networking
+    - *CS 152* Trust and Safety Engineering
