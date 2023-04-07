@@ -32,6 +32,8 @@ Standardized: Internet Datagram Format (STD 5 / RFC 91)
 
 Round trip time: time between message sent and reply received
 
+**Distinguishing feature**: independent, contains enough info to be routed to *final* destination
+
 ## Encapsulation
 
 * Once we have a contract to deliver a message with a payload, the payload can be anything arbitrary
@@ -41,6 +43,7 @@ Round trip time: time between message sent and reply received
 
 ## Multiplexing
 
+* Sharing of a resource by runtime dispatch on an *identifier*
 * How we can send not just to a host, but to an ordinary application
     - Internet datagram is host-to-host
     - But user datagram is instead addressed to a port number / process (protocol 17)
