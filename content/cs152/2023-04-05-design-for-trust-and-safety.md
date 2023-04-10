@@ -39,3 +39,17 @@ Guest lecture: Karen Maxim, Policy & Law Enforcement Response Team Lead at Zoom 
     - But data is subjective and noisy
 * Abuse leads to poor experience, has impact on uesr trust, and can lead to user harm
 * Measurement via internal and external methods
+
+### Precision and Recall
+
+* Precision: proportion of positive identifications that are correct -- TP/(TP + FP)
+* Recall: proportion of actual positives that were identified correctly -- TP/(TP + FN)
+* Accuracy: fraction of predictions the model got right -- (TP + TN)/(TP + FP + TN + FN)
+* Prevalence: proportion of bad content that got past the system -- FN/(TP + FP + TN + FN)
+
+### Using measurements to make decisions
+
+Axes:
+
+* Responsibility of product
+* Harm: from bad product experience, to death or serious injury
